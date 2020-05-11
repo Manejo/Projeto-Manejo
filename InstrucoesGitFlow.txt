@@ -1,0 +1,59 @@
+OBS: Sempre ignorar os parenteses.
+
+*Titulo
+
+*Comandos básicos: 
+
+*Adiciona os arquivos novos no git.
+Git add (nome do arquivo ou . para adicionar tudo)
+
+*Agrupa todos os arquivos adicionados em um pacote para preparar para subir para o repositório.
+Git commit -m "(Mensagem que quer enviar. Lembrar sempre de por uma mensagem útil)"
+
+*Sobe para o github todos os pacotes que foram commitados na branch que está utilizando no momento.
+Git push origin (nome da branch que está no momento)
+
+*Mesmo caso do comando acima, o que difere é que a branch que está sendo trabalhada no momento ainda não existe no repositório.
+Git push --set-upstream origin (nome da branch que está no momento. OBS: Nesse caso ela ainda não está no github)
+
+*Puxa todos os arquivos novos que estão no repositório para sua maquina.
+Git pull
+-------------------------------------------------------------------------------------------------------------------------------
+*Comandos do git flow:
+*Link útil: https://danielkummer.github.io/git-flow-cheatsheet/
+
+--Features
+
+*Inicia um fluxo de feature novo, com uma branch com seu nome
+git flow feature start (nome da feature)
+
+*Finaliza o desenvolvimento da feature que está mexendo e junta ela com a branch develop
+git flow feature finish (nome da feature)
+
+*Caso precise subir a feature para o repositório, esse é o comando
+git flow feature publish (nome da feature)
+
+*Puxa todos os arquivos que foram alterados na feature
+git flow feature pull origin (nome da feature)
+
+--Releases
+
+*Inicia uma release
+git flow release start (número da versão, por exemplo 0.0.1)
+
+*Caso queira subir a release
+git flow release publish (número da versão, por exemplo 0.1.0)
+
+*Finaliza o trabalho na release, mesclando com a branch develop e com a master, criando uma versão de produção do sistema
+git flow release finish (número da versão, por exemplo 0.1.0)
+
+*Puxa todos os arquivos que foram alterados na release
+git flow release pull (número da versão, por exemplo 0.1.0)
+
+--Hotfixes
+
+*Inicia um hotfix
+git flow hotfix start (nome dado ao hotfix, recomendável o uso da versão atual + versão do hotfix no final, por exemplo 0.1.1)
+
+*Finaliza o trabalho feito no hotfix, mesclando ele com a master e com a develop
+git flow hotfix finish (nome dado ao hotfix, recomendável o uso da versão atual + versão do hotfix no final, por exemplo 0.1.1)
