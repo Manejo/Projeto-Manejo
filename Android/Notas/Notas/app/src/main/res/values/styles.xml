@@ -6,5 +6,6 @@
     </style>
 
     <style name="Manejo.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
     <style name="Manejo.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark" />
 </resources>
