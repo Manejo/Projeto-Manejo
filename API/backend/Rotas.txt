@@ -1,0 +1,15 @@
+Trilhas - 
+
+Get 1;
+Get todas;
+Post 1 - Update;
+Post 1 - Create;
+Delete 1;
+
+Ocorrencias -
+
+Get 1;
+Get todas;
+Post 1 - Update;
+Post 1 - Create;
+Delete 1;

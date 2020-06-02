@@ -1,0 +1,27 @@
+para iniciar o knex e criar o arquivo, deve-se usar o comando: 
+    npx knex init
+    OBS: npx é o executador de pacotes e npm é o criador e gerenciador de pacotes do node
+
+para criar uma migration, ou seja, uma tabela usando o knex, é usado o seguinte codigo:
+    npx knex migrate:make (nome da migration/tabela)
+
+ao finalizar as alterações das migrations, deve-se usar o seguinte comando para criar elas de fato:
+    npx knex migrate:latest
+
+**para voltar atrás na ultima criação das migrations, é usado o seguinte comando:
+    npx knex migrate:rollback
+*caso queira voltar atrás em todas as criações, é usado o seguinte comando:
+    npx knex migrate:rollback --all
+
+**para rodar a proxima migration que ainda não foi executada, é usado o seguinte comando:
+    npx knex migrate:up
+*e para rodar uma especifica, é usado o seguinte comando:
+    npx knex migrate:up 001_migration_name.js
+
+**para voltar atrás na ultima migration criada, é usado o seguinte comando:
+    npx knex migrate:down
+*e para voltar atrás em uma especifica, é usado o seguinte comando:
+    npx knex migrate:down 001_migration_name.js
+
+para listar todas as migrations, incluindo executadas e não executadas, é usado o seguinte comando:
+    npx knex migrate:list
