@@ -22,7 +22,7 @@ Git pull
 *Altera de uma branch para outra
 git checkout (nome da branch que quer ir)
 
-*Mesca os pacotes e diferenças entre as branches
+*Mescla os pacotes e diferenças entre as branches
 git merge (nome da branch que quer mesclar com a atual)
 
 -------------------------------------------------------------------------------------------------------------------------------
