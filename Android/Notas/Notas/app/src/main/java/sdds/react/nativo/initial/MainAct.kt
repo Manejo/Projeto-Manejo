@@ -2,6 +2,8 @@ package sdds.react.nativo.initial
 
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
@@ -15,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import sdds.react.nativo.R
 
-class InitialScreenNav : AppCompatActivity() {
+class MainAct : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
@@ -36,6 +38,8 @@ class InitialScreenNav : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        setSupportActionBar(toolbar)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -44,8 +48,23 @@ class InitialScreenNav : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.fab_cadastrar_trilha -> {
+                Toast.makeText(applicationContext, "click on setting", Toast.LENGTH_LONG).show()
+                true
+            }
+            R.id.fab_cadastrar_ocorrencia ->{
+                Toast.makeText(applicationContext, "click on share", Toast.LENGTH_LONG).show()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
+
 }

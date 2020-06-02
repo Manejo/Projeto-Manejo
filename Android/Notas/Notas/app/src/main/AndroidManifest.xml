@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="sdds.react.nativo">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -16,7 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Manejo">
-
+        <activity android:name=".trilha.Trilha_View"></activity>
+        <activity android:name=".trilha.Cadastro_trilha" />
+        <activity
+            android:name=".Botton"
+            android:label="@string/title_activity_botton"
+            android:theme="@style/Manejo.NoActionBar" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -31,17 +35,16 @@
 
         <activity
             android:name=".mapa.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
         <activity
-            android:name=".initial.InitialScreenNav"
+            android:name=".initial.MainAct"
             android:label="@string/title_activity_initial_screen_nav"
             android:theme="@style/Manejo.NoActionBar" />
         <activity
-            android:name=".initial.InitialScreen"
-            android:noHistory="true"
-            />
+            android:name=".initial.LoginScreenAct"
+            android:noHistory="true" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".SplashAct"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>

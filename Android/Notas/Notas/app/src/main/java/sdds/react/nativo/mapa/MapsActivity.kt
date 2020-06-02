@@ -1,14 +1,16 @@
 package sdds.react.nativo.mapa
 
-import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import android.os.Bundle
-
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 import sdds.react.nativo.R
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -37,9 +39,39 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val zoo = LatLng(-8.002168, -34.946697)
-        mMap.addMarker(MarkerOptions().position(zoo).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(zoo))
+        /*val PEDI = LatLng(-8.0034027, -34.9481667)
+        mMap.addMarker(
+            MarkerOptions()
+                .position(PEDI)
+                .title("Parque estadual Dois Irmãos")
+                .icon(
+                    BitmapDescriptorFactory.fromResource(R.drawable.logodiscord)
+                )
+        )
+        mMap.moveCamera(
+            CameraUpdateFactory.newLatLngZoom(PEDI, 14f)
+        )*/
+
+        //Trilha
+
+        val Trilha = LatLng(-8.005402, -34.944379)
+
+        mMap.moveCamera(
+            CameraUpdateFactory.newLatLngZoom(Trilha, 15f)
+        )
+
+        val v1 = LatLng(-8.009609, -34.943907)
+        val v2 = LatLng(-8.006846, -34.948584)
+        val v3 = LatLng(-8.005402, -34.944379)
+        val v4 = LatLng(-8.002724, -34.950129)
+
+        val polylineOptions = PolylineOptions()
+        polylineOptions.add(v1)
+        polylineOptions.add(v2)
+        polylineOptions.add(v3)
+        polylineOptions.add(v4)
+        polylineOptions.color(Color.RED)
+        polylineOptions.width(5f)
+        mMap.addPolyline(polylineOptions)
     }
 }

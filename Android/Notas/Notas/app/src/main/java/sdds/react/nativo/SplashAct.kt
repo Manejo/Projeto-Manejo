@@ -4,10 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
-import sdds.react.nativo.initial.InitialScreen
-import sdds.react.nativo.initial.InitialScreenNav
+import sdds.react.nativo.initial.MainAct
 
-class SplashActivity : AppCompatActivity() {
+class SplashAct : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,6 +18,6 @@ class SplashActivity : AppCompatActivity() {
     }
 
     fun openInitialScreen(){
-        startActivity(Intent(this, InitialScreenNav::class.java))
+        startActivity(Intent(this, MainAct::class.java))
     }
 }
