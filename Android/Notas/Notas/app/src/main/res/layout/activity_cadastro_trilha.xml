@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#fff"
-    tools:context=".trilha.Cadastro_trilha">
+    tools:context=".Trilha.Cadastro_trilha">
 
     <View
         android:id="@+id/view"

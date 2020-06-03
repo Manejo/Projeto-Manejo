@@ -1,4 +1,4 @@
-package sdds.react.nativo.initial
+package sdds.react.nativo.Initial
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

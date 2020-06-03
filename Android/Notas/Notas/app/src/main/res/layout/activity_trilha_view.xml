@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".trilha.Trilha_View">
+    tools:context=".Trilha.Trilha_View">
 
     <TextView
         android:id="@+id/textView16"
@@ -33,7 +33,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:context=".mapa.MapsAct" />
+        tools:context=".Mapa.MapsAct" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/floatingActionsMenu"

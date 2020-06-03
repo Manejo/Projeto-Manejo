@@ -1,4 +1,4 @@
-package sdds.react.nativo.initial.ui.home
+package sdds.react.nativo.Fragments.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

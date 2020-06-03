@@ -1,4 +1,4 @@
-package sdds.react.nativo.Adapter
+package sdds.react.nativo.Utils.Adapter
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import sdds.react.nativo.R
 

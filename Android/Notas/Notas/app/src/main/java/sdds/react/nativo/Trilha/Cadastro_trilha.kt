@@ -1,4 +1,4 @@
-package sdds.react.nativo.trilha
+package sdds.react.nativo.Trilha
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity

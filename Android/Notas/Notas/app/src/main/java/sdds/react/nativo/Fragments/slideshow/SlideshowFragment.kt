@@ -1,4 +1,4 @@
-package sdds.react.nativo.initial.ui.gallery
+package sdds.react.nativo.Fragments.slideshow
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,28 +8,28 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import sdds.react.nativo.R
-import sdds.react.nativo.mapa.MapsAct
+import sdds.react.nativo.Trilha.TrilhaList
 
+class SlideshowFragment : Fragment() {
 
-class GalleryFragment : Fragment() {
-
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var slideshowViewModel: SlideshowViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        galleryViewModel =
-            ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
 
+    ): View? {
+        slideshowViewModel =
+            ViewModelProviders.of(this).get(SlideshowViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
         return root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        startActivity(Intent(activity, MapsAct::class.java))
+        startActivity(Intent(activity, TrilhaList::class.java))
     }
+
 }

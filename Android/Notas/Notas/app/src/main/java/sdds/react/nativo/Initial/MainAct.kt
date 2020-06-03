@@ -1,4 +1,4 @@
-package sdds.react.nativo.initial
+package sdds.react.nativo.Initial
 
 import android.os.Bundle
 import android.view.Menu
@@ -7,7 +7,6 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -15,8 +14,6 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import sdds.react.nativo.R
-import sdds.react.nativo.initial.ui.gallery.GalleryFragment
-import sdds.react.nativo.initial.ui.gallery.GalleryViewModel
 
 class MainAct : AppCompatActivity() {
 

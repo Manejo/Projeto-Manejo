@@ -1,13 +1,11 @@
-package sdds.react.nativo.trilha
+package sdds.react.nativo.Trilha
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Button
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_trilha_list.*
-import sdds.react.nativo.Adapter.TrilhaButtonAdapter
+import sdds.react.nativo.Utils.Adapter.TrilhaButtonAdapter
 import sdds.react.nativo.R
 
 class TrilhaList : AppCompatActivity() {

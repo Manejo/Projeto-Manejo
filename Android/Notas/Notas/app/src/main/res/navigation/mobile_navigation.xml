@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="sdds.react.nativo.initial.ui.home.HomeFragment"
+        android:name="sdds.react.nativo.Fragments.home.HomeFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/nav_home_second"
-        android:name="sdds.react.nativo.initial.ui.home.HomeSecondFragment"
+        android:name="sdds.react.nativo.Fragments.home.HomeSecondFragment"
         android:label="@string/home_second"
         tools:layout="@layout/fragment_home_second">
         <action
@@ -31,13 +31,13 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="sdds.react.nativo.initial.ui.gallery.GalleryFragment"
+        android:name="sdds.react.nativo.Fragments.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/fragment_gallery" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="sdds.react.nativo.initial.ui.slideshow.SlideshowFragment"
+        android:name="sdds.react.nativo.Fragments.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 </navigation>

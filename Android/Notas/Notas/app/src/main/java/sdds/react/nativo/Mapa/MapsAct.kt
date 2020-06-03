@@ -1,6 +1,5 @@
-package sdds.react.nativo.mapa
+package sdds.react.nativo.Mapa
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -10,7 +9,6 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import com.google.android.gms.maps.model.PolylineOptions
 import sdds.react.nativo.R
 
 class MapsAct : AppCompatActivity(), OnMapReadyCallback {

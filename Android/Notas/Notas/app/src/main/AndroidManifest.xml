@@ -15,12 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Manejo">
-        <activity android:name=".trilha.TrilhaList"></activity>
+        <activity android:name=".Trilha.TrilhaList"></activity>
 
-        <activity android:name=".trilha.Trilha_View"
+        <activity android:name=".Trilha.Trilha_View"
                   android:noHistory="true"/>
 
-        <activity android:name=".trilha.Cadastro_trilha"
+        <activity android:name=".Trilha.Cadastro_trilha"
                   android:noHistory="true" />
 
         <meta-data
@@ -28,17 +28,17 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".mapa.MapsAct"
+            android:name=".Mapa.MapsAct"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".initial.MainAct"
+            android:name=".Initial.MainAct"
             android:label="@string/title_activity_initial_screen_nav"
             android:theme="@style/Manejo.NoActionBar" />
         <activity
-            android:name=".initial.LoginScreenAct"
+            android:name=".Initial.LoginScreenAct"
             android:noHistory="true" />
         <activity
-            android:name=".SplashAct"
+            android:name=".Initial.SplashAct"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgTela"
-    tools:context=".initial.ui.slideshow.SlideshowFragment">
+    tools:context=".Fragments.slideshow.SlideshowFragment">
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/floatingActionsMenu"
