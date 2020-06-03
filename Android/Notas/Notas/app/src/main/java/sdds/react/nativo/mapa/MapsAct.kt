@@ -13,7 +13,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.maps.model.PolylineOptions
 import sdds.react.nativo.R
 
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsAct : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
@@ -39,7 +39,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        /*val PEDI = LatLng(-8.0034027, -34.9481667)
+        val PEDI = LatLng(-8.0034027, -34.9481667)
         mMap.addMarker(
             MarkerOptions()
                 .position(PEDI)
@@ -50,11 +50,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.moveCamera(
             CameraUpdateFactory.newLatLngZoom(PEDI, 14f)
-        )*/
+        )
 
         //Trilha
 
-        val Trilha = LatLng(-8.005402, -34.944379)
+        /*val Trilha = LatLng(-8.005402, -34.944379)
 
         mMap.moveCamera(
             CameraUpdateFactory.newLatLngZoom(Trilha, 15f)
@@ -72,6 +72,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         polylineOptions.add(v4)
         polylineOptions.color(Color.RED)
         polylineOptions.width(5f)
-        mMap.addPolyline(polylineOptions)
+        mMap.addPolyline(polylineOptions)*/
     }
 }

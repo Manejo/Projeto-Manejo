@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import sdds.react.nativo.R
-import sdds.react.nativo.mapa.MapsActivity
+import sdds.react.nativo.mapa.MapsAct
 
 
 class GalleryFragment : Fragment() {
@@ -30,6 +30,6 @@ class GalleryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        startActivity(Intent(activity, MapsActivity::class.java))
+        startActivity(Intent(activity, MapsAct::class.java))
     }
 }

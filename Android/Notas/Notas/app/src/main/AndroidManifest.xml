@@ -15,44 +15,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Manejo">
-<<<<<<< HEAD
-        <activity
-            android:name=".Botton"
-            android:label="@string/title_activity_botton"
-            android:theme="@style/Manejo.NoActionBar"></activity>
-=======
-        <activity android:name=".trilha.Trilha_View"></activity>
-        <activity android:name=".trilha.Cadastro_trilha" />
-        <activity
-            android:name=".Botton"
-            android:label="@string/title_activity_botton"
-            android:theme="@style/Manejo.NoActionBar" />
->>>>>>> master
-        <!--
-             The API key for Google Maps-based APIs is defined as a string resource.
-             (See the file "res/values/google_maps_api.xml").
-             Note that the API key is linked to the encryption key used to sign the APK.
-             You need a different API key for each encryption key, including the release key that is used to
-             sign the APK for publishing.
-             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-        -->
+        <activity android:name=".trilha.TrilhaList"></activity>
+
+        <activity android:name=".trilha.Trilha_View"
+                  android:noHistory="true"/>
+
+        <activity android:name=".trilha.Cadastro_trilha"
+                  android:noHistory="true" />
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".mapa.MapsActivity"
+            android:name=".mapa.MapsAct"
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".initial.MainAct"
             android:label="@string/title_activity_initial_screen_nav"
             android:theme="@style/Manejo.NoActionBar" />
         <activity
-<<<<<<< HEAD
-            android:name=".initial.InitialScreen"
-=======
             android:name=".initial.LoginScreenAct"
->>>>>>> master
             android:noHistory="true" />
         <activity
             android:name=".SplashAct"
