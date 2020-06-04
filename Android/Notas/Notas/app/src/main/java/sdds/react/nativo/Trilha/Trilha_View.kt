@@ -14,8 +14,15 @@ class Trilha_View : AppCompatActivity() {
         val extras = intent.extras
 
         if (extras != null) {
-            val NomeTrilha = extras.getString("mensagem")
-            txtNome.setText(NomeTrilha)
+            val nome = extras.getString("trilhaNome")
+            val status = extras.getString("trilhaStatus")
+            val dificuldade = extras.getString("trilhaDificuldade")
+            val coordenadas = extras.getString("trilhaCoordenadas")
+
+            txtNome.setText(nome)
+            txtStatus.setText(status)
+            txtDificuldade.setText(dificuldade)
+            txtCoordenadas.setText(coordenadas)
         }
     }
 }

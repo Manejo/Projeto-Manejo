@@ -2,7 +2,7 @@ package com.study.lmav.testandorecyclerview.Classes
 
 import com.google.gson.annotations.SerializedName
 
-data class Trilha (
+data class TrilhaDataClass (
     @SerializedName("id")
     var id : String,
     @SerializedName("capacidade")

@@ -1,12 +1,12 @@
 package sdds.react.nativo.Utils.Interfaces
 
-import com.study.lmav.testandorecyclerview.Classes.Trilha
+import com.study.lmav.testandorecyclerview.Classes.TrilhaDataClass
 import retrofit2.Call
 import retrofit2.http.GET
 
 interface Endpoint {
 
     @GET("trilhas")
-    fun getTrilhas() : Call<List<Trilha>>
+    fun getTrilhas() : Call<List<TrilhaDataClass>>
 
 }
