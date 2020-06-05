@@ -22,7 +22,7 @@ class GalleryFragment : Fragment() {
     ): View? {
         galleryViewModel =
             ViewModelProviders.of(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        val root = inflater.inflate(R.layout.activity_maps, container, false)
 
         return root
     }
@@ -30,6 +30,10 @@ class GalleryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        openMap()
+    }
+
+    fun openMap(){
         startActivity(Intent(activity, MapsAct::class.java))
     }
 }

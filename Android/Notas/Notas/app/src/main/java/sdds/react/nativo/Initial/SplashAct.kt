@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import sdds.react.nativo.R
+import sdds.react.nativo.Trilha.Cadastro_trilha
+import sdds.react.nativo.Trilha.TrilhaList
 
 class SplashAct : AppCompatActivity() {
 
@@ -18,6 +20,6 @@ class SplashAct : AppCompatActivity() {
     }
 
     fun openInitialScreen(){
-        startActivity(Intent(this, MainAct::class.java))
+        startActivity(Intent(this, Cadastro_trilha::class.java))
     }
 }

@@ -53,7 +53,7 @@ class TrilhaButtonAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     if (it.nome.equals(itemAtual)){
 
                         intent.putExtra("trilhaNome", it.nome)
-                        intent.putExtra("trilhaId", it.id)
+                        //intent.putExtra("trilhaId", it.id)
                         intent.putExtra("trilhaCapacidade", it.capacidade)
                         intent.putExtra("trilhaDificuldade", it.dificuldade)
                         intent.putExtra("trilhaStatus", it.status)

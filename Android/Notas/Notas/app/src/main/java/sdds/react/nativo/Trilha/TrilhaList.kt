@@ -66,7 +66,8 @@ class TrilhaList : AppCompatActivity() {
             override fun onResponse(call: Call<List<TrilhaDataClass>>, response: Response<List<TrilhaDataClass>>) {
                 response.body()?.forEach {
 
-                    val trilha = TrilhaClass(it.id, it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
+                    //val trilha = TrilhaClass(it.id, it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
+                    val trilha = TrilhaClass(it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
 
                     trilhas.add(trilha)
                 }
