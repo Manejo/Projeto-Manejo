@@ -84,10 +84,7 @@ class TrilhaList : AppCompatActivity() {
         rcViewMessageList.layoutManager = LinearLayoutManager(this)
         rcViewMessageList.adapter = adapter
 
-        if (adapter is TrilhaButtonAdapter) {
-            adapter.addAct(this, Intent(this, Trilha_View::class.java))
-            rcViewMessageList.scrollToPosition(adapter.itemCount-1)
-        }
+        adapter.addAct(this, Intent(this, Trilha_View::class.java))
+        rcViewMessageList.scrollToPosition(adapter.itemCount-1)
     }
-
 }
