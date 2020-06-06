@@ -3,7 +3,6 @@ package sdds.react.nativo.Trilha
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.study.lmav.testandorecyclerview.Classes.NetworkUtils
@@ -14,12 +13,12 @@ import retrofit2.Callback
 import retrofit2.Response
 import sdds.react.nativo.Utils.Adapter.TrilhaButtonAdapter
 import sdds.react.nativo.R
-import sdds.react.nativo.Utils.Classes.TrilhaClass
+import sdds.react.nativo.Utils.Classes.TrilhaGetClass
 import sdds.react.nativo.Utils.Interfaces.Endpoint
 
 class TrilhaList : AppCompatActivity() {
 
-    protected val trilhas = mutableListOf<TrilhaClass>()
+    protected val trilhas = mutableListOf<TrilhaGetClass>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,8 +65,8 @@ class TrilhaList : AppCompatActivity() {
             override fun onResponse(call: Call<List<TrilhaDataClass>>, response: Response<List<TrilhaDataClass>>) {
                 response.body()?.forEach {
 
-                    //val trilha = TrilhaClass(it.id, it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
-                    val trilha = TrilhaClass(it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
+                    val trilha = TrilhaGetClass(it.id, it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
+                    //val trilha = TrilhaGetClass(it.capacidade, it.nome, it.dificuldade, it.status, it.coordenadas)
 
                     trilhas.add(trilha)
                 }

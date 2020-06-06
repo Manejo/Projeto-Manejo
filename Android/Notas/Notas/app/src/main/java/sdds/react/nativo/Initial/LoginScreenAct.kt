@@ -16,10 +16,10 @@ class LoginScreenAct : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_initial)
-        setOnClickListener()
+        setUpListeners()
     }
 
-    fun setOnClickListener() {
+    fun setUpListeners() {
         btn_entrar.setOnClickListener{
             var txt_login = findViewById<TextView>(R.id.txt_login).text
             var txt_senha = findViewById<TextView>(R.id.txt_senha).text

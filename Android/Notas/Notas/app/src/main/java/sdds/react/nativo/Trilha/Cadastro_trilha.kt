@@ -11,7 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import sdds.react.nativo.R
-import sdds.react.nativo.Utils.Classes.TrilhaClass
+import sdds.react.nativo.Utils.Classes.TrilhaPostClass
 import sdds.react.nativo.Utils.Interfaces.Endpoint
 
 class Cadastro_trilha : AppCompatActivity() {
@@ -45,7 +45,9 @@ class Cadastro_trilha : AppCompatActivity() {
 
                     txtContador.setText(Contador.toString())
                 } else {
-                    Log.i("teste", coordenadas[0] + coordenadas[1] + coordenadas[2] +coordenadas[3])
+                    Toast.makeText(this, txtNome.text.toString() +
+                        txtStatus.text.toString() +
+                        txtDificuldade.text.toString() + coordenadas[0] + coordenadas[1] + coordenadas[2] +coordenadas[3], Toast.LENGTH_LONG).show()
                 }
             }
         }
@@ -53,14 +55,12 @@ class Cadastro_trilha : AppCompatActivity() {
         btnAdicionar.setOnClickListener{
             if (Contador == 4) {
 
-                val trilha = TrilhaClass(
+                val trilha = TrilhaPostClass(
                     40,
-                    "" + txtNome.text.toString(),
-                    "" + txtDificuldade.text.toString(),
-                    "" + txtStatus.text.toString(),
+                    txtNome.text.toString(),
+                    txtDificuldade.text.toString(),
+                    txtStatus.text.toString(),
                     coordenadas[0] + coordenadas[1] + coordenadas[2] +coordenadas[3])
-
-                Log.i("", trilha.nome)
 
                 postData(trilha)
             } else {
@@ -69,21 +69,20 @@ class Cadastro_trilha : AppCompatActivity() {
         }
     }
 
-    private fun postData(trilha: TrilhaClass) {
-        Toast.makeText(baseContext, "Chegou aqui", Toast.LENGTH_SHORT).show()
+    private fun postData(trilhaPost: TrilhaPostClass) {
 
         val retrofitClient = NetworkUtils
             .getRetrofitInstance("http://192.168.1.64:3333")
 
         val endpoint = retrofitClient.create(Endpoint::class.java)
-        val callback = endpoint.postTrilha(trilha)
+        val callback = endpoint.postTrilha(trilhaPost)
 
-        callback.enqueue(object: Callback<TrilhaClass?>{
-            override fun onResponse(call: Call<TrilhaClass?>, response: Response<TrilhaClass?>) {
-
+        callback.enqueue(object: Callback<TrilhaPostClass?>{
+            override fun onResponse(call: Call<TrilhaPostClass?>, response: Response<TrilhaPostClass?>) {
+                Toast.makeText(baseContext, response.message(), Toast.LENGTH_SHORT).show()
             }
 
-            override fun onFailure(call: Call<TrilhaClass?>, t: Throwable) {
+            override fun onFailure(call: Call<TrilhaPostClass?>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
         })

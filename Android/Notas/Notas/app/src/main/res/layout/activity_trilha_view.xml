@@ -120,24 +120,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <fragment
-        android:id="@+id/map"
-        android:name="com.google.android.gms.maps.SupportMapFragment"
-        android:layout_width="383dp"
-        android:layout_height="381dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtCoordenadas"
-        app:layout_constraintVertical_bias="0.65999997"
-        tools:context=".Mapa.MapsAct" />
-
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:id="@+id/floatingActionsMenu"
         android:layout_width="wrap_content"
@@ -151,7 +133,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_cadastrar_trilha"
+            android:id="@+id/fab_editarTrilha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/letras"
@@ -161,7 +143,7 @@
             app:fab_title="Editar" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_cadastrar_ocorrencia"
+            android:id="@+id/fab_apagarTrilha"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:fab_colorNormal="@color/letras"
@@ -212,5 +194,19 @@
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+    <Button
+        android:id="@+id/btnExibirMapa"
+        android:layout_width="198dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="152dp"
+        android:background="@drawable/rounded_button"
+        android:text="Exibir mapa da trilha"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintVertical_bias="0.103" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

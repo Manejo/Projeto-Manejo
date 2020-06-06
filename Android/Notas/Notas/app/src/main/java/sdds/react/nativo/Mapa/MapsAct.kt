@@ -1,6 +1,9 @@
 package sdds.react.nativo.Mapa
 
+import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -9,6 +12,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.BitmapDescriptorFactory
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 import sdds.react.nativo.R
 
 class MapsAct : AppCompatActivity(), OnMapReadyCallback {
@@ -22,6 +26,7 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+
     }
 
     /**
@@ -35,9 +40,25 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
      */
 
     override fun onMapReady(googleMap: GoogleMap) {
+
+        val extras = intent.extras
+        val coordenadas = extras?.getString("coordenadas")
+
+        val partes = coordenadas.toString().split(";")
+
+        val LatLng1 = partes[0].replace(";","")
+        val LatLng2 = partes[1].replace(";","")
+        val LatLng3 = partes[2].replace(";","")
+        val LatLng4 = partes[3].replace(";","")
+
+        /*
+        val l1 = LatLng1.split(",")[0].replace(",", "")
+        val l2 = LatLng1.split(",")[1].replace(",", "")
+
+
         mMap = googleMap
 
-        val PEDI = LatLng(-8.0034027, -34.9481667)
+        val PEDI = LatLng(l1.toDouble(), l2.toDouble())
         mMap.addMarker(
             MarkerOptions()
                 .position(PEDI)
@@ -48,20 +69,34 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.moveCamera(
             CameraUpdateFactory.newLatLngZoom(PEDI, 14f)
-        )
+        )*/
 
         //Trilha
+        mMap = googleMap
 
-        /*val Trilha = LatLng(-8.005402, -34.944379)
+        var l1 = LatLng2.split(",")[0].replace(",", "").toDouble()
+        var l2 = LatLng2.split(",")[1].replace(",", "").toDouble()
+        val Trilha = LatLng(l1, l2)
 
         mMap.moveCamera(
             CameraUpdateFactory.newLatLngZoom(Trilha, 15f)
         )
 
-        val v1 = LatLng(-8.009609, -34.943907)
-        val v2 = LatLng(-8.006846, -34.948584)
-        val v3 = LatLng(-8.005402, -34.944379)
-        val v4 = LatLng(-8.002724, -34.950129)
+        l1 = LatLng1.split(",")[0].replace(",", "").toDouble()
+        l2 = LatLng1.split(",")[1].replace(",", "").toDouble()
+        val v1 = LatLng(l1, l2)
+
+        l1 = LatLng2.split(",")[0].replace(",", "").toDouble()
+        l2 = LatLng2.split(",")[1].replace(",", "").toDouble()
+        val v2 = LatLng(l1, l2)
+
+        l1 = LatLng3.split(",")[0].replace(",", "").toDouble()
+        l2 = LatLng3.split(",")[1].replace(",", "").toDouble()
+        val v3 = LatLng(l1, l2)
+
+        l1 = LatLng4.split(",")[0].replace(",", "").toDouble()
+        l2 = LatLng4.split(",")[1].replace(",", "").toDouble()
+        val v4 = LatLng(l1, l2)
 
         val polylineOptions = PolylineOptions()
         polylineOptions.add(v1)
@@ -70,6 +105,6 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
         polylineOptions.add(v4)
         polylineOptions.color(Color.RED)
         polylineOptions.width(5f)
-        mMap.addPolyline(polylineOptions)*/
+        mMap.addPolyline(polylineOptions)
     }
 }

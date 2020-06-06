@@ -12,10 +12,10 @@ class PrincipalAct : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal)
 
-        setOnClickListener()
+        setUpListeners()
     }
 
-    private fun setOnClickListener(){
+    private fun setUpListeners(){
         btnTrilha.setOnClickListener{
             startActivity(Intent(this, TrilhaList::class.java))
         }

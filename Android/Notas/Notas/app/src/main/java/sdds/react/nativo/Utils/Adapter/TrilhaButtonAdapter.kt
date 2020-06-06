@@ -8,21 +8,21 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import sdds.react.nativo.R
-import sdds.react.nativo.Utils.Classes.TrilhaClass
+import sdds.react.nativo.Utils.Classes.TrilhaGetClass
 
 class TrilhaButtonAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private val items: MutableList<String> = mutableListOf<String>()
     private lateinit var context: Context
     private lateinit var intent: Intent
-    private val trilhas = mutableListOf<TrilhaClass>()
+    private val trilhas = mutableListOf<TrilhaGetClass>()
 
     fun addAct(context: Context, intent: Intent){
         this.context = context
         this.intent = intent
     }
 
-    fun addTrilha(trilha: TrilhaClass){
-        this.trilhas.add(trilha)
+    fun addTrilha(trilhaGet: TrilhaGetClass){
+        this.trilhas.add(trilhaGet)
     }
 
     fun addItem(message: String){
@@ -53,7 +53,7 @@ class TrilhaButtonAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     if (it.nome.equals(itemAtual)){
 
                         intent.putExtra("trilhaNome", it.nome)
-                        //intent.putExtra("trilhaId", it.id)
+                        intent.putExtra("trilhaId", it.id)
                         intent.putExtra("trilhaCapacidade", it.capacidade)
                         intent.putExtra("trilhaDificuldade", it.dificuldade)
                         intent.putExtra("trilhaStatus", it.status)
@@ -62,7 +62,6 @@ class TrilhaButtonAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                         context.startActivity(intent)
                     }
                 }
-                //context.startActivity(intent.putExtra("mensagem", itemAtual))
             }
         }
     }
