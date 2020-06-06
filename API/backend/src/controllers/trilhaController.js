@@ -3,7 +3,7 @@ const connection = require("../database/connection");
 
 module.exports = {
   async listar(request, response) {
-    const trilha = await connection("trilhas").select("*");
+    const trilha = await connection("trilhas").select("*").orderBy("nome");
 
     return response.json(trilha);
   },
