@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import sdds.react.nativo.R
+import sdds.react.nativo.Trilha.TrilhaList
 
 class SplashAct : AppCompatActivity() {
 
