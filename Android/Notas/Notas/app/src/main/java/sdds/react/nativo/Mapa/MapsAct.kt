@@ -2,8 +2,6 @@ package sdds.react.nativo.Mapa
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -42,6 +40,29 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
 
         val extras = intent.extras
+
+        if (extras != null){
+            exibeLinhas(googleMap)
+        } else {
+            mMap = googleMap
+
+            val Localizacao = LatLng(-8.0034027, -34.9481667)
+            mMap.addMarker(
+                MarkerOptions()
+                    .position(Localizacao)
+                    .title("Parque estadual Dois Irmãos")
+                    .icon(
+                        BitmapDescriptorFactory.fromResource(R.drawable.minilogo)
+                    )
+            )
+            mMap.moveCamera(
+                CameraUpdateFactory.newLatLngZoom(Localizacao, 14f)
+            )
+        }
+    }
+
+    private fun exibeLinhas(googleMap: GoogleMap){
+        val extras = intent.extras
         val coordenadas = extras?.getString("coordenadas")
 
         val partes = coordenadas.toString().split(";")
@@ -51,27 +72,6 @@ class MapsAct : AppCompatActivity(), OnMapReadyCallback {
         val LatLng3 = partes[2].replace(";","")
         val LatLng4 = partes[3].replace(";","")
 
-        /*
-        val l1 = LatLng1.split(",")[0].replace(",", "")
-        val l2 = LatLng1.split(",")[1].replace(",", "")
-
-
-        mMap = googleMap
-
-        val PEDI = LatLng(l1.toDouble(), l2.toDouble())
-        mMap.addMarker(
-            MarkerOptions()
-                .position(PEDI)
-                .title("Parque estadual Dois Irmãos")
-                .icon(
-                    BitmapDescriptorFactory.fromResource(R.drawable.logodiscord)
-                )
-        )
-        mMap.moveCamera(
-            CameraUpdateFactory.newLatLngZoom(PEDI, 14f)
-        )*/
-
-        //Trilha
         mMap = googleMap
 
         var l1 = LatLng2.split(",")[0].replace(",", "").toDouble()

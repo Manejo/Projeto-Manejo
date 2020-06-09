@@ -13,13 +13,14 @@
 
         <Button
             android:id="@+id/btnExibicao"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="363dp"
+            android:layout_height="47dp"
             android:layout_marginTop="8dp"
             android:background="@drawable/rounded_button"
             android:text="texto aqui"
             android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-            android:textSize="30sp"
+            android:textColor="#fff"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
