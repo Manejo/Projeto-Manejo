@@ -17,7 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Manejo"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Initial.PrincipalAct"></activity>
+        <activity
+            android:name=".Initial.InfoAct"
+            android:theme="@style/Principal" />
+        <activity
+            android:name=".Initial.PrincipalAct"
+            android:theme="@style/Principal" />
         <activity android:name=".Trilha.TrilhaList" />
         <activity
             android:name=".Trilha.Trilha_View"
@@ -39,7 +44,7 @@
         <activity
             android:name=".Initial.SplashAct"
             android:noHistory="true"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Principal">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
