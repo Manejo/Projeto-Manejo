@@ -23,7 +23,9 @@
         <activity
             android:name=".Initial.PrincipalAct"
             android:theme="@style/Principal" />
-        <activity android:name=".Trilha.TrilhaList" />
+        <activity
+            android:name=".Trilha.TrilhaList"
+            android:noHistory="true"/>
         <activity
             android:name=".Trilha.Trilha_View"
             android:noHistory="true" />

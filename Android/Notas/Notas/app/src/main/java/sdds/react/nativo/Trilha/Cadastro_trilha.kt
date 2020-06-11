@@ -13,6 +13,8 @@ import retrofit2.Response
 import sdds.react.nativo.R
 import sdds.react.nativo.Utils.Classes.TrilhaPostClass
 import sdds.react.nativo.Utils.Interfaces.Endpoint
+import java.util.*
+import kotlin.concurrent.schedule
 
 class Cadastro_trilha : AppCompatActivity() {
 
@@ -79,7 +81,11 @@ class Cadastro_trilha : AppCompatActivity() {
 
         callback.enqueue(object: Callback<TrilhaPostClass?>{
             override fun onResponse(call: Call<TrilhaPostClass?>, response: Response<TrilhaPostClass?>) {
-                Toast.makeText(baseContext, response.message(), Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Trilha cadastrada com sucesso.", Toast.LENGTH_SHORT).show()
+
+                Timer("Voltar para lista", false).schedule(1000){
+                    startActivity(Intent(baseContext, TrilhaList::class.java))
+                }
             }
 
             override fun onFailure(call: Call<TrilhaPostClass?>, t: Throwable) {

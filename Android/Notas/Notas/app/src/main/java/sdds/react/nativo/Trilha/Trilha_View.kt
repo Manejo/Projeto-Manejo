@@ -15,6 +15,8 @@ import sdds.react.nativo.Mapa.MapsAct
 import sdds.react.nativo.R
 import sdds.react.nativo.Utils.Classes.TrilhaPostClass
 import sdds.react.nativo.Utils.Interfaces.Endpoint
+import java.util.*
+import kotlin.concurrent.schedule
 
 class Trilha_View : AppCompatActivity() {
 
@@ -53,8 +55,6 @@ class Trilha_View : AppCompatActivity() {
                 txtStatus.text.toString(),
                 txtCoordenadas.text.toString())
 
-
-            Toast.makeText(baseContext, "Editando trilha de id: " + id.toString(), Toast.LENGTH_SHORT).show()
             updateData(trilha, id.toString())
         }
 
@@ -64,6 +64,10 @@ class Trilha_View : AppCompatActivity() {
             val id = extras?.getString("trilhaId")
 
             removeData(id.toString())
+        }
+
+        fab_voltar.setOnClickListener{
+            startActivity(Intent(this, TrilhaList::class.java))
         }
 
         btnExibirMapa.setOnClickListener{
@@ -82,10 +86,18 @@ class Trilha_View : AppCompatActivity() {
         callback.enqueue(object: Callback<TrilhaPostClass?> {
             override fun onResponse(call: Call<TrilhaPostClass?>, response: Response<TrilhaPostClass?>) {
                 Toast.makeText(baseContext, "Alterada com sucesso", Toast.LENGTH_SHORT).show()
+
+                Timer("Voltar para lista", false).schedule(1000){
+                    startActivity(Intent(baseContext, TrilhaList::class.java))
+                }
             }
 
             override fun onFailure(call: Call<TrilhaPostClass?>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(baseContext, "Alterada com sucesso", Toast.LENGTH_SHORT).show()
+
+                Timer("Voltar para lista", false).schedule(1000){
+                    startActivity(Intent(baseContext, TrilhaList::class.java))
+                }
             }
         })
     }
@@ -101,6 +113,10 @@ class Trilha_View : AppCompatActivity() {
         callback.enqueue(object: Callback<TrilhaPostClass?> {
             override fun onResponse(call: Call<TrilhaPostClass?>, response: Response<TrilhaPostClass?>) {
                 Toast.makeText(baseContext, "Removido com sucesso", Toast.LENGTH_SHORT).show()
+
+                Timer("Voltar para lista", false).schedule(1000){
+                    startActivity(Intent(baseContext, TrilhaList::class.java))
+                }
             }
 
             override fun onFailure(call: Call<TrilhaPostClass?>, t: Throwable) {
