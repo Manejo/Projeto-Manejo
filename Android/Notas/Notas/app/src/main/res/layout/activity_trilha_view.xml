@@ -151,6 +151,16 @@
             app:fab_icon="@drawable/ic_add_black_24dp"
             app:fab_size="mini"
             app:fab_title="Excluir" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_voltar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_colorNormal="@color/colorPrimaryDark"
+            app:fab_colorPressed="@color/letras"
+            app:fab_icon="@drawable/ic_add_black_24dp"
+            app:fab_size="mini"
+            app:fab_title="Voltar" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
     <TextView
@@ -199,7 +209,7 @@
         android:id="@+id/btnExibirMapa"
         android:layout_width="198dp"
         android:layout_height="45dp"
-        android:layout_marginTop="152dp"
+        android:layout_marginTop="130dp"
         android:background="@drawable/rounded_button"
         android:text="Exibir mapa da trilha"
         android:textColor="#fff"
@@ -208,6 +218,6 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView14"
-        app:layout_constraintVertical_bias="0.103" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
